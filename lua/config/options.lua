@@ -14,5 +14,21 @@ vim.filetype.add({
   },
 })
 
-vim.opt.spelllang = { "en_us" }
-vim.opt.spell = true
+local opt = vim.opt
+
+opt.spelllang = { "en_us" }
+opt.spell = true
+
+opt.relativenumber = false
+
+opt.mousescroll = "ver:1,hor:0"
+
+-- Enter Terminal mode when focused on a terminal Window
+local termGroup = vim.api.nvim_create_augroup("TermGroup", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  callback = function()
+    vim.cmd("startinsert")
+  end,
+  pattern = { "term://*" },
+  group = termGroup,
+})
