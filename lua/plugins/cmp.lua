@@ -15,7 +15,7 @@ return {
       ["<S-Down>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { "i", "c" }),
       ["<S-Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i", "c" }),
       ["<S-Space>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
-      ["<C-Space>"] = cmp.mapping(cmp.mapping.complete({}), { "i", "c" }),
+      ["<C-Space>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
     }
     opts.mapping = mapping
     opts.experimental = {}
